@@ -5,7 +5,7 @@ This repo contains a Flask API adapted from ACEest desktop code, with CI/CD pipe
 
 ## Setup
 ```bash
-git clone https://github.com/<your-username>/aceest-fitness.git
+git clone https://github.com/vk-c0de/aceest-fitness.git
 cd aceest-fitness
 python3 -m venv venv && source venv/bin/activate
 pip install -r requirements.txt
