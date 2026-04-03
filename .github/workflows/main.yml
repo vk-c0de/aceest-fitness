@@ -1,0 +1,15 @@
+name: CI Pipeline
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v4
+        with: { python-version: '3.10' }
+      - run: pip install -r requirements.txt
+      - run: flake8 .
+      - run: pytest -q
+      - run: docker build -t aceest-fitness .
+      - run: docker run --rm aceest-fitness pytest -q
+
