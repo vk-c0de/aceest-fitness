@@ -1,10 +1,10 @@
 def test_programs(client):
-    resp = client.get("/api/programs")
-    assert resp.status_code == 200
-    assert isinstance(resp.get_json(), list)
+    response = client.get("/api/programs")
+    assert response.status_code == 200
+    assert isinstance(response.get_json(), list)
+
 
 def test_fee(client):
-    resp = client.post("/api/fee", json={"months": 12, "tier": "premium"})
-    assert resp.status_code == 200
-    assert resp.get_json()["fee"] > 0
-
+    response = client.post("/api/fee", json={"months": 12, "tier": "premium"})
+    assert response.status_code == 200
+    assert response.get_json()["fee"] > 0
